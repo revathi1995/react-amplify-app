@@ -4,7 +4,7 @@ import createHistory from 'history/createBrowserHistory';
 import './App.css';
 
 import Home from './views/Home';
-import ImageInput from './views/ImageInput';
+
 import VideoInput from './views/VideoInput';
 
 class App extends Component {
@@ -14,7 +14,6 @@ class App extends Component {
         <Router history={createHistory({ basename: process.env.PUBLIC_URL })}>
           <div className="route">
             <Route exact path="/" component={Home} />
-            <Route exact path="/photo" component={ImageInput} />
             <Route exact path="/camera" component={VideoInput} />
           </div>
         </Router>
