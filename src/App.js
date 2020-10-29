@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
 import { Route, Router } from 'react-router-dom';
-import createHistory from 'history/createBrowserHistory';
-import './App.css';
+import { createBrowserHistory } from "history";
+
+import CameraFaceDetect from './views/cameraFaceDetect';
 
 import Header from './components/Header';
+import './App.css';
 
-import VideoInput from './views/VideoInput';
+const history = createBrowserHistory();
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
-        <Router history={createHistory({ basename: process.env.PUBLIC_URL })}>
+        <Router history={history}>
           <div className="route">
-            <Header/>
-            <Route exact path="/camera" component={VideoInput} />
+            <Header />
+            <Route exact path="/camera" component={CameraFaceDetect} />
           </div>
         </Router>
       </div>
